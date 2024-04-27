@@ -1,29 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import DDR_arrows from './assets/DDR_Arrows.png';
 import './App.css'
+import MainTempo from './components/MainTempo';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
     <>
       <div>
-        <img className="logo" src={DDR_arrows} alt="DDR Arrows" width="500" height="200"/>
+        <img className="ddr-logo" src={DDR_arrows} alt="DDR Arrows"/>
       </div>
       <h1>DDR Tempo</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <MainTempo/>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
