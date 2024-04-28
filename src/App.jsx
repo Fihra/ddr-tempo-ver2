@@ -1,8 +1,9 @@
 import DDR_arrows from './assets/DDR_Arrows.png';
 import './App.css'
+import { TempoProvider } from './context/TempoContext';
 import Tempo from './components/Tempo';
 import TempoMods from './components/TempoMods';
-import { TempoProvider } from './context/TempoContext';
+import ScrollPreview from './components/ScrollPreview';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <TempoProvider>
           <Tempo/>
           <TempoMods/>
+          <ScrollPreview/>
       </TempoProvider>
     </>
   )
