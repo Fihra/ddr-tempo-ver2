@@ -15,7 +15,8 @@ export const initialState = {
         7: false,
         8: false,
         9: false,
-    }
+    },
+    scrollSpeedPreview: 1
 }
 
 const TempoReducer = (state, action) => {
@@ -44,6 +45,11 @@ const TempoReducer = (state, action) => {
                 ...state,
                 currentTempoMod: payload.currentTempoMod,
                 speedModMap: copySpeedModMap
+            }
+        case TEMPOACTIONS.SET_SCROLL_SPEED_PREVIEW:
+            return {
+                ...state,
+                scrollSpeedPreview: payload.scrollSpeedPreview
             }
         default:
             return state;
