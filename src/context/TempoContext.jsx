@@ -23,11 +23,33 @@ export const TempoProvider = ({children}) => {
         })
     }
 
+    const setCurrentTempoMod = (value) => {
+        dispatch({
+            type: TEMPOACTIONS.SET_CURRENT_TEMPO_MOD,
+            payload: {
+                currentTempoMod: value
+            }
+        })
+    }
+
+    const setSpeedModMap = (value) => {
+        dispatch({
+            type: TEMPOACTIONS.SET_SPEED_MOD_MAP,
+            payload: {
+                speedModMap: value
+            }
+        })
+    }
+
     const value = {
         minimumTempo: state.minimumTempo,
         maximumTempo: state.maximumTempo,
+        currentTempoMod: state.currentTempoMod,
+        speedModMap: state.speedModMap,
         setMinimumTempo,
         setMaximumTempo,
+        setCurrentTempoMod,
+        setSpeedModMap
     }
     
     return <TempoContext.Provider value={value}>{children}</TempoContext.Provider>
