@@ -10,3 +10,6 @@
   height: 200px;
 }
 
+.tempo-text {
+  display: inline-flex;
+}
