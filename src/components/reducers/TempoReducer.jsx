@@ -33,14 +33,17 @@ const TempoReducer = (state, action) => {
                 maximumTempo: payload.maximumTempo
             }
         case TEMPOACTIONS.SET_CURRENT_TEMPO_MOD:
-            return {
-                ...state,
-                currentTempoMod: payload.currentTempoMod
+            let copySpeedModMap = {};
+            for(const [key, _] of Object.entries(state.speedModMap)) {
+                copySpeedModMap[key] = false;
             }
-        case TEMPOACTIONS.SET_SPEED_MOD_MAP:
+
+            copySpeedModMap[payload.currentTempoMod] = true;
+
             return {
                 ...state,
-                speedModMap: payload.speedModMap
+                currentTempoMod: payload.currentTempoMod,
+                speedModMap: copySpeedModMap
             }
         default:
             return state;
