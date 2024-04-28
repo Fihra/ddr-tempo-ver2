@@ -3,10 +3,11 @@ import { TempoContext } from "../context/TempoContext";
 
 const ModButton = (props) => {
     const tempoContext = useContext(TempoContext);
-    const { setCurrentTempoMod, speedModMap } = tempoContext;
+    const { setCurrentTempoMod, speedModMap, setScrollSpeedPreview } = tempoContext;
 
     const handleClick = () => {
         setCurrentTempoMod(props.num);
+        setScrollSpeedPreview(props.num);
     }
 
     return(
