@@ -5,7 +5,11 @@ import ModButton from "./ModButton";
 
 const TempoMods = () => {
     const tempoContext = useContext(TempoContext);
-    const {minimumTempo, maximumTempo, currentTempoMod, speedModMap} = tempoContext;
+    const {minimumTempo, maximumTempo, currentTempoMod, speedModMap, setScrollSpeedPreview} = tempoContext;
+
+    const setScrollSpeedModder = (num) => {
+        setScrollSpeedPreview(num);
+    }
 
     const showTempoMods = () => {
         const textModsArray = ['blue', 'orange', 'green', 'red']
@@ -18,7 +22,7 @@ const TempoMods = () => {
                         counter++;
                         return(
                             <li key={idx}>
-                            <span><span style={{backgroundColor: textModsArray[idx]}}>x{temp}</span> {minimumTempo * temp} - {maximumTempo * temp} </span>
+                            <span><span style={{backgroundColor: textModsArray[idx]}} onClick={() => setScrollSpeedModder(temp)}>x{temp}</span> {minimumTempo * temp} - {maximumTempo * temp} </span>
                             </li>
                         )
                     })
