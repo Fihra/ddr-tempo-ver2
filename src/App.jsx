@@ -4,6 +4,7 @@ import { TempoProvider } from './context/TempoContext';
 import Tempo from './components/Tempo';
 import TempoMods from './components/TempoMods';
 import ScrollPreview from './components/ScrollPreview';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Tempo/>
           <TempoMods/>
           <ScrollPreview/>
+          <Footer />
       </TempoProvider>
     </>
   )
