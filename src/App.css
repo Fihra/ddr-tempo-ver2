@@ -1,15 +1,47 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  margin-top: -150px;
 }
 
 .ddr-logo {
   width: 500px;
   height: 200px;
+  margin-bottom: -50px;
 }
 
 .tempo-text {
   display: inline-flex;
+}
+
+.speed-container {
+  display: flex;
+}
+
+.mod-block {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  column-gap: 60px;
+}
+
+.mod-block > * {
+  flex: 1 1 150px;
+}
+
+.mod-button {
+  background-color: #0083E1;
+  padding: 10px;
+  width: 10px;
+}
+
+.mod-button:active {
+  background-color: green;
+}
+
+.mod-button:hover {
+  background-color: red;
 }
