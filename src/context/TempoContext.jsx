@@ -32,14 +32,25 @@ export const TempoProvider = ({children}) => {
         })
     }
 
+    const setScrollSpeedPreview = (value) => {
+        dispatch({
+            type: TEMPOACTIONS.SET_SCROLL_SPEED_PREVIEW,
+            payload: {
+                scrollSpeedPreview: value
+            }
+        })
+    }
+
     const value = {
         minimumTempo: state.minimumTempo,
         maximumTempo: state.maximumTempo,
         currentTempoMod: state.currentTempoMod,
         speedModMap: state.speedModMap,
+        scrollSpeedPreview: state.scrollSpeedPreview,
         setMinimumTempo,
         setMaximumTempo,
         setCurrentTempoMod,
+        setScrollSpeedPreview
     }
     
     return <TempoContext.Provider value={value}>{children}</TempoContext.Provider>
