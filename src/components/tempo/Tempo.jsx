@@ -1,27 +1,41 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Slider from '@mui/material/Slider';
 import { TempoContext } from "../../context/TempoContext";
+import { EditText } from "react-edit-text";
 
 const Tempo = () => {
-    const [value, setValue] = useState([120, 900]);
-
     const tempoContext = useContext(TempoContext);
-    const { setMinimumTempo, tempos } = tempoContext;
+    const { setMinimumTempo, setMaximumTempo, minimumTempo, maximumTempo } = tempoContext;
 
+    const handleSliderChange = (e) => {
+        console.log("value: ", e.target.value);
 
-    const handleChange = (_, newValue) => {
-    //   setValue(newValue);
-        setMinimumTempo(newValue);
+        setMinimumTempo(e.target.value[0]);
+        setMaximumTempo(e.target.value[1]);
     };
 
-    console.log(tempoContext);
+    const saveMinimumForm = (num) => {
+        setMinimumTempo(Number(num.target.value))
+    }
+
+    const saveMaximumForm = (num) => {
+        setMaximumTempo(Number(num.target.value))
+    }
     
+    const showTempos = () => {
+        return(
+            <span className="tempo-text">
+                {<EditText name="minForm" value={minimumTempo} type="string" placeholder={minimumTempo} onChange={saveMinimumForm}/>} - {<EditText name="maxForm" value={maximumTempo} type="string" placeholder={maximumTempo} onChange={saveMaximumForm}/>}
+            </span>
+        )
+    }
+
     return(
         <div>
-            <h2>Main Tempo Section</h2>
+            <h4>{showTempos()}</h4>
                 <Slider
-                    value={tempos}
-                    onChange={handleChange}
+                    value={[minimumTempo, maximumTempo]}
+                    onChange={handleSliderChange}
                     valueLabelDisplay="auto"
                     max={1000}
                     min={0}
