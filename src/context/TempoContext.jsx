@@ -14,11 +14,20 @@ export const TempoProvider = ({children}) => {
         })
     }
 
-    // console.log(state.tempos);
+    const setMaximumTempo = (value) => {
+        dispatch({
+            type: TEMPOACTIONS.SET_MAX_TEMPO,
+            payload: {
+                maximumTempo: value
+            }
+        })
+    }
 
     const value = {
-        tempos: state.tempos,
-        setMinimumTempo
+        minimumTempo: state.minimumTempo,
+        maximumTempo: state.maximumTempo,
+        setMinimumTempo,
+        setMaximumTempo,
     }
     
     return <TempoContext.Provider value={value}>{children}</TempoContext.Provider>
