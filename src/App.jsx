@@ -1,6 +1,7 @@
 import DDR_arrows from './assets/DDR_Arrows.png';
 import './App.css'
-import Tempo from './components/tempo/Tempo';
+import Tempo from './components/Tempo';
+import TempoMods from './components/TempoMods';
 import { TempoProvider } from './context/TempoContext';
 
 const App = () => {
@@ -11,9 +12,8 @@ const App = () => {
       </div>
       <h1>DDR Tempo</h1>
       <TempoProvider>
-        <div>
           <Tempo/>
-        </div>
+          <TempoMods/>
       </TempoProvider>
     </>
   )
