@@ -1,29 +1,11 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { TempoContext } from "../context/TempoContext";
 import { tempoMods } from "./tempoModsData";
 import ModButton from "./ModButton";
 
 const TempoMods = () => {
-    const [ speed, setSpeed ] = useState({
-        speedModMap: {
-            0: false,
-            1: false,
-            2: false,
-            3: false,
-            4: false,
-            5: false,
-            6: false,
-            7: false,
-            8: false,
-            9: false,
-        },
-        currentTempoMod: 1
-    })
     const tempoContext = useContext(TempoContext);
-
-    const {minimumTempo, maximumTempo, setCurrentTempoMod, currentTempoMod} = tempoContext;
-
-    console.log(currentTempoMod);
+    const {minimumTempo, maximumTempo, currentTempoMod, speedModMap} = tempoContext;
 
     const showTempoMods = () => {
         const textModsArray = ['blue', 'orange', 'green', 'red']
@@ -48,17 +30,17 @@ const TempoMods = () => {
 
     const getZeroToFourMod = () => {
         return( 
-            Object.keys(speed.speedModMap).slice(0, 5).map((num) => Number(num)).map((_, i) => {
-            return (
-                <ModButton key={i} num={i}/>
-            )
-        })
+            Object.keys(speedModMap).slice(0, 5).map((num) => Number(num)).map((_, i) => {
+                return (
+                    <ModButton key={i} num={i}/>
+                )
+            })
         )
     }
 
     const getFiveToNineMod = () => {
         return (
-            Object.keys(speed.speedModMap).slice(5, 10).map((num) => Number(num)).map((item, _) => {
+            Object.keys(speedModMap).slice(5, 10).map((num) => Number(num)).map((item, _) => {
                 return (
                     <ModButton key={item} num={item}/>
                 )
