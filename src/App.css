@@ -57,12 +57,13 @@
 }
 
 .mod-block ul {
-  
+  padding-left: 0;
   list-style-type: none;
 }
 
 .mod-block li {
-  text-align: left;
+  /* text-align: left; */
+  padding: 6px;
   align-items: center;
   margin: 0 auto;
   line-height: 50px;
