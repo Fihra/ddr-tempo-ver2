@@ -1,6 +1,13 @@
-# React + Vite
+# DDR Tempo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This app is a tool for DDR players, or even other rhythm gamers that allow speed modifiers, to adjust your Tempo/BPM and calculate the adjustments for you.
+
+Tools used:
+- React.js
+- Vite
+- Material UI
+- React Spring
+- React Edit Text
 
 Currently, two official plugins are available:
 
