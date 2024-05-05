@@ -53,7 +53,7 @@
 }
 
 .mod-button:hover {
-  background-color: red;
+  opacity: 0.8;
 }
 
 .mod-block ul {
@@ -67,6 +67,11 @@
   align-items: center;
   margin: 0 auto;
   line-height: 50px;
+}
+
+.tempo-mod-num:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 .scroll-preview-container {
