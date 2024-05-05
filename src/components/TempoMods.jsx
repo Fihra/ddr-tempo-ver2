@@ -22,7 +22,7 @@ const TempoMods = () => {
                         counter++;
                         return(
                             <li key={idx} style={{border: `solid 1px ${textModsArray[idx]}`}}>
-                                <p style={{backgroundColor: textModsArray[idx]}} onClick={() => setScrollSpeedModder(temp)}>x{temp}</p>
+                                <p className="tempo-mod-num" style={{backgroundColor: textModsArray[idx]}} onClick={() => setScrollSpeedModder(temp)}>x{temp}</p>
                                 <p> {minimumTempo * temp} - {maximumTempo * temp} </p>
                             </li>
                         )
@@ -55,7 +55,7 @@ const TempoMods = () => {
 
     return(
         <section>
-            <h3>Speeds Mods</h3>
+            <h3>Speed Mods</h3>
             <div className="speed-container">
                 <div className="mod-block">
                     {getZeroToFourMod()}
