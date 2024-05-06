@@ -5,6 +5,7 @@ This app is a tool for DDR players, or even other rhythm gamers that allow speed
 Tools used:
 - React.js
 - Vite
+- Capacitor
 - Material UI
 - React Spring
 - React Edit Text
