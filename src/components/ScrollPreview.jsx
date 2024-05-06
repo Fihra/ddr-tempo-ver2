@@ -11,7 +11,7 @@ const ScrollPreview = () => {
     const maxArrowNote = ((60000 / maximumTempo) * 4) / scrollSpeedPreview;
 
     const checkWindowSize = () => {
-        return window.innerWidth > 326 ? 100 : 30
+        return window.innerWidth > 540 ? 100 : 30
     }
 
     const minSprings = useSpring({
